@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Favorite Inanimate Objects!</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Add base html here. -->
+        <div id="content">
+            {% for message in get_flashed_messages() %}
+                <p>{{ message }}</p>
+            {% endfor %}
+            <nav>
+                <a href="/">Home</a>
+                {% if current_user.is_authenticated %}
+                    <a href="/favorites">My Favorite Objects</a>
+                {% endif %}
+                <div>
+                    <a href="/new_collection">New Collection</a>
+                    <a href="/new_object">New Object</a>
+                    {% if current_user.is_authenticated %}
+                        <a href="/logout">Logout</a>
+                    {% else %}
+                        <a href="/signup">Sign Up</a>
+                        <a href="/login">Log In</a>
+                    {% endif %}
+                </div>
+            </nav>
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

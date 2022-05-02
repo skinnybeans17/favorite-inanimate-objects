@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Collection - {{ collection.title }}</h1>
+<p>Made by {{ collection.created_by.username }}</p>
+
+<h2>Objects</h2>
+
+<div class="objects">
+    {% for object in collection.objects %}
+    <div class="object-details">
+        <a href="/object/{{ object.id }}">
+        <p><strong>{{ object.name }}</strong></p></a><img src="{{ object.image_url }}" alt="{{ object.name }}" width="200px">
+        <p><strong>Type of Object: {{ object.category }}</strong></p></a>
+    </div>
+    {% endfor %}
+</div>
+
+
+<h2>Edit Collection</h2>
+
+<form method="POST" action="{{ url_for('main.collection_detail', collection_id=collection.id) }}">
+    {% include 'partials/collection_form.html' %}
+</form>
+
+{% endblock %}

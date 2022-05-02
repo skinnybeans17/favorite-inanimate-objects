@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if current_user.is_authenticated %}
+    <p>Hello there again {{ current_user.username }}!</p> 
+{% endif %}
+
+<h1>Favorite Inanimate Objects!</h1>
+
+<p><em>Always wanted to state your favorite inanimate objects? Here you go!</em></p>
+
+<h2>All Collections</h2>
+
+{% for collection in all_collections %}
+<div class="store">
+    <a href="/collection/{{ collection.id }}">{{ collection.title }}</a> - 
+    {{ collection.objects|length }} objects
+</div>
+{% endfor %}
+
+{% endblock %}

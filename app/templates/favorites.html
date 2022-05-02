@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Here are your favorite objects!</h2>
+<div class="objects">
+    {% for object in favorites %}
+        <div class="object-details">
+            <a href="/object/{{ object.id }}"><img src="{{ object.image_url }}" alt="{{ object.name }}" width="200px">
+            <p><strong>{{ object.name }}</strong></p></a>
+            <a href="/remove_from_favorites/{{ object.id }}">Remove from Favorites</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

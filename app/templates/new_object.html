@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>New Object</h1>
+
+<form method="POST" action="{{ url_for('main.new_object') }}">
+    <fieldset>
+        <legend>Please enter your information:</legend>
+            {{ form.csrf_token }}
+
+        <fieldset>
+            <legend>Add a new Object</legend>
+
+            {{form.name.label}}
+            {{form.name}}
+            <ul>
+                {% for error in form.name.errors %}
+                    <li class="error">{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {{form.category.label}}
+            {{form.category}}
+            <ul>
+                {% for error in form.category.errors %}
+                    <li class="error">{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {{form.image_url.label}}
+            {{form.image_url}}
+            <ul>
+                {% for error in form.image_url.errors %}
+                    <li class="error">{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {{form.collection.label}}
+            {{form.collection}}
+            <ul>
+                {% for error in form.collection.id.errors %}
+                    <li class="error">{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {{form.submit}}
+        </fieldset>
+        
+
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
+
+
+{% endblock %}

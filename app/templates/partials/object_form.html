@@ -1,0 +1,33 @@
+{{ form.csrf_token }}
+<fieldset>
+    <legend>Enter the info about the Object:</legend>
+    {{form.name.label}}
+    {{form.name}}
+    <ul>
+        {% for error in form.name.errors %}
+            <li class="error">{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {{form.category.label}}
+    {{form.category}}
+    <ul>
+        {% for error in form.category.errors %}
+            <li class="error">{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {{form.image_url.label}}
+    {{form.image_url}}
+    <ul>
+        {% for error in form.image_url.errors %}
+            <li class="error">{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {{form.collection.label}}
+    {{form.collection}}
+    <ul>
+        {% for error in form.collection.errors %}
+            <li class="error">{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {{form.submit}}
+</fieldset>

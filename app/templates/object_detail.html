@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Object - {{ object.name }}</h1>
+<p>Added by {{ object.created_by.username }}</p>
+
+{% if current_user.is_authenticated %}
+    {% if object in current_user.favorite_objects %}
+        <p class="btn btn-secondary">This is one of your favorite objects!</p>
+    {% else %}
+        <a href="/add_to_favorites/{{ object.id }}" class="btn btn-success">Add to Favorites</a>
+    {% endif %}
+{% endif %}
+
+<p><img src="{{ object.image_url }}" width="250px" height="250px"></p>
+
+<p><strong>Category:</strong> {{ object.category }}</p>
+
+<p><strong>Collection in:</strong> {{ object.collection.title }}</p>
+
+
+<h2>Edit Item</h2>
+
+<form method="POST" action="{{ url_for('main.object_detail', object_id=object.id) }}">
+    {% include 'partials/object_form.html' %}
+</form>
+
+{% endblock %}

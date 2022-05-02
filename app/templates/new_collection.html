@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>New Collection</h1>
+
+<form method="POST" action="{{ url_for('main.new_collection') }}">
+    {% include 'partials/collection_form.html' %}
+</form>
+
+
+{% endblock %}
