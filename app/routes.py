@@ -3,6 +3,7 @@ from flask_login import login_user, logout_user, login_required, current_user
 from app.models import Collection, Object, User
 from app.forms import CollectionForm, ObjectForm, SignUpForm, LoginForm
 from app import bcrypt
+import os
 
 # Create your routes here.
 
