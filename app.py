@@ -1,5 +1,5 @@
 from app.extensions import app, db
-from app.routes import main, auth
+from app.main.routes import main, auth
 
 app.register_blueprint(main)
 app.register_blueprint(auth)
