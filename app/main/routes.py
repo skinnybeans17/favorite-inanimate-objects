@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, flash, url_for, redirect
 from flask_login import login_required, current_user
-from app.models import Collection, Object
+from app.models import Collection, Object, User
 from app.main.forms import CollectionForm, ObjectForm
 import os
 
@@ -9,7 +9,6 @@ import os
 from app.extensions import app, db
 
 main = Blueprint("main", __name__)
-auth = Blueprint("auth", __name__)
 
 @main.route('/')
 def homepage():

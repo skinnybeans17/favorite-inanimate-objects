@@ -4,6 +4,10 @@ from flask_login import LoginManager
 from app.models import User
 from app.extensions import app
 
+from app.main.routes import main
+
+app.register_blueprint(main)
+
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
 login_manager.init_app(app)
