@@ -4,8 +4,6 @@ from app.models import Collection, Object, User
 from app.main.forms import CollectionForm, ObjectForm
 import os
 
-# Create your routes here.
-
 from app.extensions import app, db
 
 main = Blueprint("main", __name__)

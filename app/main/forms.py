@@ -1,4 +1,3 @@
-# Create your forms here.
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
