@@ -1,12 +1,7 @@
-from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
-
-from app.models import User
 from app.extensions import app
-
-from app.main.routes import main
-
-app.register_blueprint(main)
+from app.models import User
+from flask_bcrypt import Bcrypt
 
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
