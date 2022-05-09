@@ -1,13 +1,11 @@
 from flask import Blueprint, request, render_template, flash, url_for, redirect
-from flask_login import login_user, logout_user, login_required, current_user
+from flask_login import login_user, logout_user, login_required
 from app.models import User
 from app.auth.forms import SignUpForm, LoginForm
-from app.extensions import app, db, bcrypt
+from app.extensions import db, bcrypt
 import os
 
-main = Blueprint('main', __name__)
 auth = Blueprint('auth', __name__)
-
 
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup():
