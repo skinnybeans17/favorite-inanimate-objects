@@ -7,6 +7,7 @@ import os
 from app.extensions import app, db
 
 main = Blueprint("main", __name__)
+auth = Blueprint("auth", __name__)
 
 @main.route('/')
 def homepage():
