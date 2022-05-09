@@ -4,7 +4,7 @@ from app.models import User
 from flask_bcrypt import Bcrypt
 
 login_manager = LoginManager()
-login_manager.login_view = 'main.homepage'
+login_manager.login_view = 'auth.login'
 login_manager.init_app(app)
 
 @login_manager.user_loader
