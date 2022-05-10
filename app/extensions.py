@@ -1,9 +1,9 @@
 from flask import Flask
-from flask_login import LoginManager
-from app.models import User
-from flask_bcrypt import Bcrypt
-from app.config import Config
 from flask_sqlalchemy import SQLAlchemy
+from app.config import Config
+from flask_login import LoginManager
+from flask_bcrypt import Bcrypt
+from app.models import User
 
 import os
 
