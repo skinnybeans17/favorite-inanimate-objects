@@ -6,7 +6,7 @@ from app import bcrypt
 from app.extensions import db
 import os
 
-auth = Blueprint('auth', __name__)
+auth = Blueprint("auth", __name__)
 
 
 @auth.route('/signup', methods=['GET', 'POST'])
