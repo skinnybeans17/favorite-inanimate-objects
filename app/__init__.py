@@ -6,7 +6,7 @@ from app.main.routes import main
 
 app.register_blueprint(main)
 
-login_manager = LoginManager()
+login_manager = LoginManager(app)
 login_manager.login_view = 'main.homepage'
 login_manager.init_app(app)
 
